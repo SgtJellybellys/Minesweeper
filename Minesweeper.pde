@@ -46,8 +46,8 @@ public boolean isWon()
    for(int r=0; r<NUM_ROWS; r++)
         for(int c=0; c<NUM_COLS; c++)
             if(buttons[r][c].contains(bombs)&&!buttons[r][c].marked)
-                return false;
-    return true;
+                return true;
+    return false;
 }
 public void displayLosingMessage()
 {
@@ -175,38 +175,22 @@ public class MSButton
   public int countBombs(int row, int col)
   {
     int numBombs=0;
-    if (isValid(row,col-1)&&bombs.contains(buttons[row][col-1]))
-    {
+    if(isValid(row,col-1)&&bombs.contains(buttons[row][col-1]))
       numBombs++;
-    }
-    if (isValid(row,col+1)&&bombs.contains(buttons[row][col+1]))
-    {
+    if(isValid(row,col+1)&&bombs.contains(buttons[row][col+1]))
       numBombs++;
-    }
-    if (isValid(row+1,col)&&bombs.contains(buttons[row+1][col]))
-    {
+    if(isValid(row+1,col)&&bombs.contains(buttons[row+1][col]))
       numBombs++;
-    }
-    if (isValid(row-1,col)&&bombs.contains(buttons[row-1][col]))
-    {
+    if(isValid(row-1,col)&&bombs.contains(buttons[row-1][col]))
       numBombs++;
-    }
-    if (isValid(row-1,col-1)&&bombs.contains(buttons[row-1][col-1]))
-    {
+    if(isValid(row-1,col-1)&&bombs.contains(buttons[row-1][col-1]))
       numBombs++;
-    }
-    if (isValid(row-1,col+1)&&bombs.contains(buttons[row-1][col+1]))
-    {
+    if(isValid(row-1,col+1)&&bombs.contains(buttons[row-1][col+1]))
       numBombs++;
-    }
-    if (isValid(row+1,col-1)&&bombs.contains(buttons[row+1][col-1]))
-    {
+    if(isValid(row+1,col-1)&&bombs.contains(buttons[row+1][col-1]))
       numBombs++;
-    }
-    if (isValid(row+1,col+1)&&bombs.contains(buttons[row+1][col+1]))
-    {
-      numBombs++;
-    }  
+    if(isValid(row+1,col+1)&&bombs.contains(buttons[row+1][col+1]))
+      numBombs++;  
     return numBombs;
   }
 }
