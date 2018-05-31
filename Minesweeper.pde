@@ -45,7 +45,7 @@ public boolean isWon()
 {
    for(int r=0; r<NUM_ROWS; r++)
         for(int c=0; c<NUM_COLS; c++)
-            if(buttons[r][c].contains(bombs)&&!buttons[r][c].marked)
+            if(bombs.contains(buttons[r][c])&&!buttons[r][c].marked)
                 return true;
     return false;
 }
