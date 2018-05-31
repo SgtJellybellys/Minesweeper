@@ -43,11 +43,7 @@ public void draw ()
 }
 public boolean isWon()
 {
-  for(int r=0; r<NUM_ROWS; r++)
-        for(int c=0; c<NUM_COLS; c++)
-            if(bombs.contains(buttons[r][c])&&!buttons[r][c].marked)
-                return false;
-    return true;
+  return false;
 }
 public void displayLosingMessage()
 {
